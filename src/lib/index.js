@@ -1,3 +1,4 @@
+import './icon/iconfont.css'
 import cascader from './cascader.vue'
 const VuiCascader = {
   install (Vue, options) {

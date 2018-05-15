@@ -22,7 +22,8 @@ const createLintingRule = () => ({
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: './src/lib/index.js'
+    // app: './src/lib/index.js'
+    app: './src/main.js'
   },
   output: {
     path: config.build.assetsRoot,

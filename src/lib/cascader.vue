@@ -1,15 +1,20 @@
 <template>
   <div class="vui-cascader" :value="value" v-clickoutside="close">
-    <input
-      class="vui-input"
-      v-model="inputText"
-      icon="android-close"
-      :disabled="disabled"
-      :placeholder="placeholder"
-      @change="handleChange"
-      @click="handleClear"
-      @focus="handleFocus"
-    />
+    <div class="vui-cascader-input-wrapper">
+      <input
+        class="vui-input"
+        v-model="inputText"
+        icon="android-close"
+        :disabled="disabled"
+        :placeholder="placeholder"
+        @change="handleChange"
+        @focus="handleFocus"
+      />
+      <i
+        class="iconfont icon-close vui-cascader-input-close"
+        @click="handleClear"
+      ></i>
+    </div>
     <transition name="fade">
       <div class="vui-cascader-wrapper" v-if="show">
         <v-menu
@@ -176,9 +181,20 @@ export default {
     height: 40px;
     line-height: 40px;
     outline: none;
-    padding: 0 15px;
+    padding: 0 34px 0 15px;
     transition: border-color .2s cubic-bezier(.645,.045,.355,1);
     width: 100%;
+  }
+  .vui-cascader-input-wrapper {
+    position: relative;
+    .vui-cascader-input-close {
+      position: absolute;
+      top: 12px;
+      right: 10px;
+      color: #DCDFE6;
+      font-weight: 500;
+      cursor: pointer;
+    }
   }
   .vui-cascader-wrapper {
     z-index: 1000;

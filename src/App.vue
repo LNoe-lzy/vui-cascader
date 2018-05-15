@@ -1,9 +1,8 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <vui-cascader
-      v-model="filter.structure.value"
-      :initData="filter.structure.data"
+      v-model="value"
+      :initData="data"
       :clickParent="true"
       :multiple="false"
     />
@@ -15,6 +14,8 @@ export default {
   name: 'App',
   data () {
     return {
+      data: [],
+      value: {}
     }
   }
 }
@@ -22,11 +23,6 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  width: 200px;
 }
 </style>
